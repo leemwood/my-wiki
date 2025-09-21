@@ -8,16 +8,16 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   // 基础配置
   title: '柠枺', // 网站标题（显示在浏览器标签页和网站头部）
-  tagline: '得不到的，伸手都多余', // 网站标语（通常显示在首页的副标题位置）
+  tagline: '世界源于灵魂的幻想。', // 网站标语（通常显示在首页的副标题位置）
   favicon: 'img/favicon.ico', // 浏览器标签页图标
 
   // 部署配置
-  url: 'https://wiki.lemwood.une', // 生产环境访问地址
+  url: 'https://wiki.lemwood.cn', // 生产环境访问地址
   baseUrl: '/', // 网站的基础路径（GitHub Pages部署时通常设为 '/项目名/'）
 
   // GitHub Pages部署配置（如果不用GitHub Pages可忽略）
-  organizationName: 'ning-g-mo', // GitHub组织/用户名
-  projectName: 'wiki', // GitHub仓库名
+  organizationName: 'leemwood', // GitHub组织/用户名
+  projectName: 'my-wiki', // GitHub仓库名
 
   // 构建配置
   onBrokenLinks: 'warn', // 遇到损坏链接时抛出错误（可选值：ignore | warn | throw）
@@ -65,7 +65,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl: // 博客编辑链接（建议改为你的仓库地址）
-            'https://github.com/ning-g-mo/wiki/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/leemwood/my-wiki/tree/main/packages/create-docusaurus/templates/shared/',
           // 博客内容校验配置
           onInlineTags: 'warn', // 行内标签警告
           onInlineAuthors: 'warn', // 行内作者警告 
@@ -135,7 +135,7 @@ const config: Config = {
             },
             {
               label: 'QQ群',
-              href: 'https://qm.qq.com/q/ayTFeM352U',
+              href: 'https://qm.qq.com/q/G0yqhEtNSO',
             }
           ],
         },
