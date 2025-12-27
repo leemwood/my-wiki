@@ -1,0 +1,8 @@
+{
+  "label": "Lemwood Mirror",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "启动器自动镜像系统文档"
+  }
+}
