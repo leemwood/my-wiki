@@ -3,9 +3,9 @@ sidebar_position: 1
 title: 项目总览
 ---
 
-# Lemwood Mirror
+# 柠枺镜像 (Lemwood Mirror)
 
-Lemwood Mirror 是一个自动化的启动器镜像系统，旨在自动从 GitHub 获取指定项目（如 FCL, ZL, ZL2）的最新 Release，并同步至本地服务器提供高速下载。
+柠枺镜像 (Lemwood Mirror) 是一个自动化的启动器镜像系统，旨在自动从 GitHub 获取指定项目（如 FCL, ZL, ZL2）的最新 Release，并同步至本地服务器提供高速下载。
 
 ## ✨ 核心特性
 

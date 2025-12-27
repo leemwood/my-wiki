@@ -3,9 +3,9 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Lemwood Mirror
+# Lemwood Mirror (柠枺镜像)
 
-Lemwood Mirror is an automated launcher mirroring system designed to automatically fetch the latest releases from GitHub projects (such as FCL, ZL, ZL2) and sync them to a local server for high-speed downloads.
+Lemwood Mirror (柠枺镜像) is an automated launcher mirroring system designed to automatically fetch the latest releases from GitHub projects (such as FCL, ZL, ZL2) and sync them to a local server for high-speed downloads.
 
 ## ✨ Key Features
 
