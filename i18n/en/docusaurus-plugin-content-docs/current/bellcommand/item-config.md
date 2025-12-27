@@ -9,7 +9,7 @@ The core of BellCommand lies in custom command items. With simple YAML configura
 
 ## 1. Basic Structure
 
-Starting from version 1.4.0, item definitions are recommended to be placed in separate `.yml` files within independent folders (default is `Default_config/`).
+Starting from version 1.4.0, item definitions are recommended to be placed in separate `.yml` files within independent folders (default is `Default_config/`). Folder names must end with `_config`.
 
 ```yaml
 items:
@@ -35,8 +35,8 @@ You can configure different command sequences for various interaction methods:
 | `shift-left-click` | Shift + Left-click |
 | `bedrock-right-click` | Bedrock specific Right-click (Floodgate) |
 | `bedrock-left-click` | Bedrock specific Left-click (Floodgate) |
-| `bedrock-shift-right-click` | Bedrock specific Shift + Right-click |
-| `bedrock-shift-left-click` | Bedrock specific Shift + Left-click |
+| `bedrock-shift-right-click` | Bedrock specific Sneak + Right-click |
+| `bedrock-shift-left-click` | Bedrock specific Sneak + Left-click |
 
 ### Command Configuration Example
 
@@ -59,12 +59,13 @@ Configure whether players automatically receive the item on specific events.
 
 ```yaml
     auto-give:
-      join: true    # Give on join
-      respawn: true # Give on respawn
+      join: true       # Give on join (every time)
+      first-join: true # Give only on first join
+      respawn: true    # Give on respawn
 ```
 
 ### Auto-Cleanup
-Configure the existence strategy of the item in player inventory.
+Configure the existence strategy of the item in player inventory. The plugin will attempt to clean up the item after a specified delay once the player receives it.
 
 ```yaml
     auto-cleanup:

@@ -9,7 +9,7 @@ BellCommand 的核心在于自定义命令物品。通过简单的 YAML 配置�
 
 ## 1. 基础结构
 
-从版本 1.4.0 开始，物品定义建议放在独立的文件夹（默认为 `Default_config/`）中的 `.yml` 文件内。
+从版本 1.4.0 开始，物品定义建议放在独立的文件夹（默认为 `Default_config/`）中的 `.yml` 文件内。文件夹名称必须以 `_config` 结尾。
 
 ```yaml
 items:
@@ -35,8 +35,8 @@ items:
 | `shift-left-click` | Shift + 左键 |
 | `bedrock-right-click` | 基岩版专用右键 (Floodgate) |
 | `bedrock-left-click` | 基岩版专用左键 (Floodgate) |
-| `bedrock-shift-right-click` | 基岩版专用 Shift + 右键 |
-| `bedrock-shift-left-click` | 基岩版专用 Shift + 左键 |
+| `bedrock-shift-right-click` | 基岩版专用潜行 + 右键 |
+| `bedrock-shift-left-click` | 基岩版专用潜行 + 左键 |
 
 ### 命令配置示例
 
@@ -59,12 +59,13 @@ items:
 
 ```yaml
     auto-give:
-      join: true    # 玩家加入服务器时给予
-      respawn: true # 玩家重生时给予
+      join: true       # 玩家加入服务器时给予 (不论是否是首次)
+      first-join: true # 仅在玩家首次加入服务器时给予
+      respawn: true    # 玩家重生时给予
 ```
 
 ### 自动清理 (Auto-Cleanup)
-配置物品在玩家背包中的存在策略。
+配置物品在玩家背包中的存在策略。当玩家拥有此物品时，插件会尝试在指定延迟后清理它。
 
 ```yaml
     auto-cleanup:

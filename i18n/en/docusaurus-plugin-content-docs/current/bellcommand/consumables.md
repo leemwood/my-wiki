@@ -14,7 +14,7 @@ Consumption logic is configured under the `consumable` node in the item definiti
 ```yaml
 items:
   limited_sword:
-    material: "DIAMOND_SWORD"
+    item-id: "DIAMOND_SWORD"
     consumable:
       enabled: true          # Enable consumption system
       mode: "COUNT"          # Consumption mode

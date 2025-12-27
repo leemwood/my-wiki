@@ -14,7 +14,7 @@ BellCommand v1.4.0 引入了精细的物品消耗逻辑，允许你为命令物�
 ```yaml
 items:
   limited_sword:
-    material: "DIAMOND_SWORD"
+    item-id: "DIAMOND_SWORD"
     consumable:
       enabled: true          # 是否开启消耗系统
       mode: "COUNT"          # 消耗模式
