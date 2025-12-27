@@ -19,13 +19,25 @@
     "message": "GeyserMenu",
     "description": "The label of footer link with label=geysermenu linking to /docs/geysermenu"
   },
+  "link.item.label.bellcommand": {
+    "message": "BellCommand",
+    "description": "The label of footer link with label=bellcommand linking to /docs/bellcommand"
+  },
+  "link.item.label.柠枺镜像": {
+    "message": "Lemwood Mirror",
+    "description": "The label of footer link with label=柠枺镜像 linking to /docs/lemwood-mirror"
+  },
+  "link.item.label.控件转换器": {
+    "message": "Control Converter",
+    "description": "The label of footer link with label=控件转换器 linking to /docs/fcl-to-zl2"
+  },
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/ning-g-mo/wiki"
   },
   "link.item.label.QQ群": {
     "message": "QQ Group",
-    "description": "The label of footer link with label=QQ群 linking to http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=R8CI4AuNuwtwT_ltnoEW8HE8Db02TaHu&authKey=OHno5zsNB%2BxNB0dpseSPbItJhpSwyFfYBhs%2BsMEgFqDl8Q8eB605BlZv0fvxkWVo&noverify=0&group_code=603902151"
+    "description": "The label of footer link with label=QQ群 linking to https://qm.qq.com/q/G0yqhEtNSO"
   },
   "copyright": {
     "message": "\n        <div style=\"margin-top: 2rem; border-top: 1px solid #444; padding-top: 1rem\">\n          <div>\n            Copyright © 2025 by 柠枺 · \n          </div>\n          <div>\n            This website is built using <a href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docusaurus</a>.\n          </div>\n        </div>\n      ",
@@ -34,9 +46,5 @@
   "logo.alt": {
     "message": "柠枺 Logo",
     "description": "The alt text of footer logo"
-  },
-  "link.item.label.bellcommand": {
-    "message": "bellcommand",
-    "description": "The label of footer link with label=bellcommand linking to /docs/bellcommand"
   }
 }

@@ -34,5 +34,21 @@
   "sidebar.tutorialSidebar.category.BellCommand.link.generated-index.title": {
     "message": "BellCommand",
     "description": "The generated-index page title for category BellCommand in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.柠枺镜像": {
+    "message": "Lemwood Mirror",
+    "description": "The label for category 柠枺镜像 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.柠枺镜像.link.generated-index.title": {
+    "message": "Lemwood Mirror",
+    "description": "The generated-index page title for category 柠枺镜像 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.控件转换器 (FCL to ZL2)": {
+    "message": "FCL to ZL2 Converter",
+    "description": "The label for category 控件转换器 (FCL to ZL2) in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.控件转换器 (FCL to ZL2).link.generated-index.title": {
+    "message": "FCL to ZL2 Converter",
+    "description": "The generated-index page title for category 控件转换器 (FCL to ZL2) in sidebar tutorialSidebar"
   }
 }

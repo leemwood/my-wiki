@@ -39,5 +39,4 @@ title: 项目总览
 
 ## 快速导航
 
-- [🚀 快速开始](getting-started.md)
 - [📖 使用指南](user-guide.md)

@@ -39,5 +39,4 @@ Manually converting these complex JSON configurations is time-consuming and pron
 
 ## Quick Navigation
 
-- [🚀 Getting Started](getting-started.md)
 - [📖 User Guide](user-guide.md)

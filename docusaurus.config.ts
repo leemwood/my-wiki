@@ -85,7 +85,7 @@ const config: Config = {
     navbar: { // 导航栏配置
       title: '柠枺',
       logo: {
-        alt: 'My Site Logo', // logo的alt文本（无障碍访问需要）
+        alt: '柠枺 Logo', // logo的alt文本（无障碍访问需要）
         src: 'img/logo.png', // logo图片路径
       },
       items: [ // 导航项配置
@@ -124,6 +124,8 @@ const config: Config = {
             { label: 'leaves整合包', to: '/docs/leaves' },
             { label: 'geysermenu', to: '/docs/geysermenu' },
             { label: 'bellcommand', to: '/docs/bellcommand'},
+            { label: '柠枺镜像', to: '/docs/lemwood-mirror' },
+            { label: '控件转换器', to: '/docs/fcl-to-zl2' },
           ],
         },
         {
