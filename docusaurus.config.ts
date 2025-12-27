@@ -133,7 +133,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/ning-g-mo/wiki',
+              href: 'https://github.com/leemwood/my-wiki',
             },
             {
               label: 'QQ群',
