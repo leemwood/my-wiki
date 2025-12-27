@@ -11,6 +11,14 @@ BellCommand 是一个功能强大的 Minecraft bukkit 插件，允许服务器�
 - 它支持基岩版玩家，需要启用支持，你**必须**安装并配置好[floodgate](https://geysermc.org/download/?project=floodgate)才能生效！
 - 丰富的命令执行方式，通过基岩版的支持，你可以一次性设置4*2=8种命令！
 
+## 快速导航
+- 📖 [基础入门](intro.md)
+- 📂 [配置系统](config.md)
+- ⚔️ [物品配置指南](item-config.md)
+- 💎 [次数性物品](consumables.md)
+- ⌨️ [指令与权限](commands.md)
+- 📜 [更新日志](changelog.md)
+
 ## 1.4.0 核心更新 (Beta)
 - 📂 **模块化配置**: 支持多文件夹存储物品配置，物品定义与主配置解耦。
 - 🔄 **实时热重载**: 基于 `WatchService` 实现配置文件实时同步，无需指令。

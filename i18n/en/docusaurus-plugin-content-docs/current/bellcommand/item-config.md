@@ -1,0 +1,77 @@
+---
+sidebar_position: 4
+title: Item Config Guide
+---
+
+# Item Configuration Guide
+
+The core of BellCommand lies in custom command items. With simple YAML configurations, you can create items with special functions, permissions, and cooldowns.
+
+## 1. Basic Structure
+
+Starting from version 1.4.0, item definitions are recommended to be placed in separate `.yml` files within independent folders (default is `Default_config/`).
+
+```yaml
+items:
+  example_sword:           # Unique Item ID
+    item-id: DIAMOND_SWORD # Item Material (use Bukkit Material names)
+    name: "&6Legendary Sword" # Display Name (supports color codes)
+    lore:                  # Item Lore
+      - "&7This is a cursed sword"
+      - "&eRight-click to trigger power"
+    permission: "sword.use" # Permission required to use (optional)
+    cooldown: 5            # Cooldown in seconds
+```
+
+## 2. Interaction Actions (Commands)
+
+You can configure different command sequences for various interaction methods:
+
+| Action Type | Description |
+| :--- | :--- |
+| `right-click` | Right-click |
+| `left-click` | Left-click |
+| `shift-right-click` | Shift + Right-click |
+| `shift-left-click` | Shift + Left-click |
+| `bedrock-right-click` | Bedrock specific Right-click (Floodgate) |
+| `bedrock-left-click` | Bedrock specific Left-click (Floodgate) |
+| `bedrock-shift-right-click` | Bedrock specific Shift + Right-click |
+| `bedrock-shift-left-click` | Bedrock specific Shift + Left-click |
+
+### Command Configuration Example
+
+```yaml
+    commands:
+      right-click:
+        1:
+          command: "heal %player%" # Command to execute
+          as-console: true         # Execute as console
+        2:
+          command: "say I am healed!"
+          as-console: false        # Execute as player
+          delay: 1.5               # Execute with 1.5s delay
+```
+
+## 3. Automatic Features
+
+### Auto-Give
+Configure whether players automatically receive the item on specific events.
+
+```yaml
+    auto-give:
+      join: true    # Give on join
+      respawn: true # Give on respawn
+```
+
+### Auto-Cleanup
+Configure the existence strategy of the item in player inventory.
+
+```yaml
+    auto-cleanup:
+      enabled: true # Whether to enable auto-cleanup
+      delay: 30     # Seconds before cleanup after receiving
+```
+
+## 4. Advanced Configuration
+
+For detailed configuration of consumable items, please refer to the [Consumables Document](consumables.md).
