@@ -24,9 +24,9 @@ Manually converting these complex JSON configurations is time-consuming and pron
 
 - ✅ **Automatic Conversion**: Complete migration of buttons, direction pads, styles, and event systems.
 - ⌨️ **Smart Key Mapping**: Handles 50+ common keys (letters, numbers, function keys, mouse buttons).
-- 📍 **Precise Coordinate Scaling**: Automatically scales coordinates from 1:1000 to 1:10000, ensuring UI layout consistency.
-- 🎨 **Safe Color Handling**: Uses verified safe color values to prevent ZL2 import crashes.
-- 🕹️ **D-Pad Optimization**: Intelligently converts FCL direction pad controls into ZL2 8-way independent button groups.
+- 📍 **Precise Coordinate Scaling**: Automatically scales coordinates from 1:1000 to 1:10000, with **v1.0.4 Enhanced Safety Checks** to prevent crashes from negative coordinates.
+- 🎨 **Safe Colors & Styles**: Uses verified safe color values and automatically clamps style parameters (font size, border width, etc.) to official limits.
+- 🕹️ **Interaction Logic Simulation**: Uses **Swipple (Sliding Linkage)** to enhance D-pad smoothness and supports **Deep Touch Detection** for touch event distribution.
 - 🚀 **Modern UI**: Built with Vue 3 + Tailwind CSS, featuring real-time preview and one-click copy/download.
 
 ## 🛠️ Tech Stack

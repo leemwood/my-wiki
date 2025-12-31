@@ -21,10 +21,26 @@ Export or open your control configuration file (usually a JSON file) in the FCL 
 1. Once converted, the **ZL2 Output Area** on the right will display the converted JSON.
 2. You can click **"Copy to Clipboard"** to use it immediately, or click **"Download File"** to save it.
 
-## Core Conversion Rules
+## Core Conversion Rules (v1.0.4 Update)
 
-### Coordinate Conversion
-FCL uses a range of `0-1000`, while ZL2 uses `0-10000`. The converter automatically multiplies all coordinates by 10.
+### Coordinate & Size Safety
+- **Scaling**: FCL (`0-1000`) is automatically converted to ZL2 (`0-10000`).
+- **Coordinate Clamping**: All coordinates are forced within the `0-10000` range to prevent ZL2 rendering issues caused by negative values.
+- **Minimum Limits**: 
+  - Minimum percentage size: `500` (5%)
+  - Minimum DP size: `5dp`
+  - *Note: If the original size is too small, it will be automatically increased to these limits to ensure controls are visible.*
+
+### Style Constraints
+To ensure the configuration file complies with official ZL2 specifications, the converter automatically applies the following limits:
+- **Font Size**: `2 - 30`
+- **Border Width**: `0 - 50`
+- **Alpha**: `0.0 - 1.0`
+
+### Interaction Logic
+- **Swipple (Sliding Linkage)**: Converted D-pads have `isSwipple` enabled by default, allowing for smooth triggers across multiple buttons, simulating a joystick feel.
+- **Deep Touch Detection**: Accurately maps FCL's `pointerFollow` property to ZL2's `isPenetrable`, ensuring touch events are distributed correctly based on z-index.
+- **Toggle Mode**: FCL's `autoKeep` property maps to ZL2's `isToggleable`.
 
 ### D-Pad Handling
 ZL2 does not natively support FCL-style integrated D-Pads. The converter breaks it down into 8 buttons (Up, Down, Left, Right, and four diagonal keys), arranged as follows:
