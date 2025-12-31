@@ -16,7 +16,7 @@ You can access the converter directly online:
 
 FCL and ZL2 use completely different control definition protocols:
 - **FCL**: Uses numeric keycodes and a per-thousand coordinate system.
-- **ZL2**: Uses GLFW keycodes, a per-ten-thousand coordinate system, and special "Compose Color" values.
+- **ZL2**: Uses GLFW keycodes, a per-ten-thousand coordinate system, and special \"Compose Color\" values.
 
 Manually converting these complex JSON configurations is time-consuming and prone to errors that cause game crashes. This tool provides an automated, type-safe conversion process.
 
@@ -26,6 +26,7 @@ Manually converting these complex JSON configurations is time-consuming and pron
 - ⌨️ **Smart Key Mapping**: Handles 50+ common keys (letters, numbers, function keys, mouse buttons).
 - 📍 **Precise Coordinate Scaling**: Automatically scales coordinates from 1:1000 to 1:10000, with **v1.0.4 Enhanced Safety Checks** to prevent crashes from negative coordinates.
 - 🎨 **Safe Colors & Styles**: Uses verified safe color values and automatically clamps style parameters (font size, border width, etc.) to official limits.
+- 🛡️ **Enhanced Robustness (v1.0.5)**: Deeply optimized reverse conversion logic with automatic null-safety for missing fields, ensuring safe conversion of incomplete configurations.
 - 🕹️ **Interaction Logic Simulation**: Uses **Swipple (Sliding Linkage)** to enhance D-pad smoothness and supports **Deep Touch Detection** for touch event distribution.
 - 🚀 **Modern UI**: Built with Vue 3 + Tailwind CSS, featuring real-time preview and one-click copy/download.
 
