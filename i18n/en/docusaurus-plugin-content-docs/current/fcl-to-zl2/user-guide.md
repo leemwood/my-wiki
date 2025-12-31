@@ -55,9 +55,18 @@ To prevent ZL2 from crashing due to non-standard color values, the converter def
 - **Background**: Semi-transparent black
 - **Border/Text**: White/Gray
 
+## Reverse Conversion (ZL2 → FCL) Robustness (v1.0.5)
+
+In version **v1.0.5**, we have significantly improved the stability of the reverse converter:
+- **Null-Safety**: Automatically handles missing `layers`, `styles`, or `clickEvents` fields in ZL2 configurations, preventing crashes on incomplete files.
+- **Style Auto-completion**: If a ZL2 button references a non-existent style UUID, the converter generates a "Default Style" to ensure FCL can load correctly.
+- **Safe Event Parsing**: Safely ignores undefined custom event types in ZL2, ensuring core keybinding migration.
+
 ## FAQ
 
 - **Q: Receiving a "JSON Format Error" after pasting?**
   - A: Ensure you pasted the complete JSON content and that there are no extra characters.
 - **Q: Control positions are wrong after importing to ZL2?**
   - A: The converter scales coordinates proportionally. If the screen aspect ratio is different, you might need to make minor adjustments in the ZL2 editor.
+- **Q: Some styles are lost during reverse conversion?**
+  - A: The converter tries its best to restore styles. If a style is undefined or the reference is broken in ZL2, it will fallback to system defaults.
