@@ -38,6 +38,10 @@ You can configure different command sequences for various interaction methods:
 | `bedrock-shift-right-click` | Bedrock specific Sneak + Right-click |
 | `bedrock-shift-left-click` | Bedrock specific Sneak + Left-click |
 
+:::tip
+Since v1.4.0-beta.2, if you don't configure a Bedrock-specific action (e.g., `bedrock-right-click`), the plugin will automatically fall back and attempt to execute the corresponding general action (e.g., `right-click`).
+:::
+
 ### Command Configuration Example
 
 ```yaml
@@ -48,9 +52,25 @@ You can configure different command sequences for various interaction methods:
           as-console: true         # Execute as console
         2:
           command: "say I am healed!"
-          as-console: false        # Execute as player
+          as-op: true              # Execute as operator (OP)
           delay: 1.5               # Execute with 1.5s delay
 ```
+
+### Command Parameters
+
+- `command`: String. The command to be executed.
+- `as-console`: Boolean. If `true`, executed by the console. If `false`, executed by the player.
+- `as-op`: Boolean. If `true`, the player will temporarily gain OP status to run the command (reverts immediately after).
+- `delay`: Number. Delay in seconds before execution.
+
+### Placeholder Support
+
+The following placeholders can be used in the `command` field:
+
+- `%player%`: Player name.
+- `%uuid%`: Player UUID.
+- `%world%`: Player's current world name.
+- `%x%`, `%y%`, `%z%`: Player's current coordinates (integers).
 
 ## 3. Automatic Features
 

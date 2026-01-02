@@ -7,6 +7,25 @@ title: Changelog
 
 Records of all version changes for BellCommand.
 
+## v1.4.0-beta.2 (2026-01-02)
+
+### Core Features
+- **Enhanced Command System**: 
+  - Added full `TabCompleter` support for the main command `/bc`.
+  - Added `as-op` execution mode, allowing players to run specific item commands with admin privileges.
+  - Expanded location placeholders: `%world%`, `%x%`, `%y%`, `%z%`.
+- **Bedrock Compatibility Fallback**: When a Bedrock player triggers an undefined specific action (e.g., `bedrock-right-click`), the plugin now automatically falls back to the corresponding general action (e.g., `right-click`).
+
+### Improvements
+- **Update Detection Optimization**: Improved robustness for non-numeric version strings (e.g., `v1.4.0-beta.2`).
+- **CI/CD Completion**: The Modrinth release process now supports all official versions from 1.13 to 1.21.1.
+
+### Fixes
+- Corrected incorrect GitHub owner information in the configuration.
+- Removed redundant internal listeners to resolve potential event conflicts.
+
+---
+
 ## v1.4.0-beta.1 (2025-12-28)
 
 ### Core Features

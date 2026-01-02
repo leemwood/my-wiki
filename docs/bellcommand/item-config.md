@@ -38,6 +38,10 @@ items:
 | `bedrock-shift-right-click` | 基岩版专用潜行 + 右键 |
 | `bedrock-shift-left-click` | 基岩版专用潜行 + 左键 |
 
+:::tip
+从 v1.4.0-beta.2 开始，如果你没有为基岩版配置特定的动作（如 `bedrock-right-click`），插件会自动回退并尝试执行对应的通用动作（如 `right-click`）。
+:::
+
 ### 命令配置示例
 
 ```yaml
@@ -48,9 +52,25 @@ items:
           as-console: true         # 是否以控制台身份执行
         2:
           command: "say 我被治愈了！"
-          as-console: false        # 以玩家身份执行
+          as-op: true              # 是否以管理员 (OP) 权限执行
           delay: 1.5               # 延迟 1.5 秒执行
 ```
+
+### 命令参数说明
+
+- `command`: 字符串。要执行的命令。
+- `as-console`: 布尔值。为 `true` 时由控制台执行，为 `false` 时由玩家执行。
+- `as-op`: 布尔值。为 `true` 时玩家将临时获得 OP 权限执行该命令（执行后立即恢复）。
+- `delay`: 数字。执行命令前的延迟时间（秒）。
+
+### 占位符支持
+
+在 `command` 字段中可以使用以下占位符：
+
+- `%player%`: 玩家名称。
+- `%uuid%`: 玩家 UUID。
+- `%world%`: 玩家所在世界名称。
+- `%x%`, `%y%`, `%z%`: 玩家当前的坐标（整数）。
 
 ## 3. 自动功能
 
