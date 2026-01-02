@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.4.0-beta.4 (2026-01-03)
+
+### Fixes
+- **Language Key Completion**: Fixed the issue where the `messages.plugin.floodgate-not-detected` language key was missing during plugin startup.
+- **Log Optimization**: Optimized the console output prompts when Floodgate environment detection fails.
+
 ## v1.4.0-beta.3 (2026-01-03)
 
 ### Internationalization Refactoring
