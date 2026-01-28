@@ -126,6 +126,7 @@ const config: Config = {
             { label: 'bellcommand', to: '/docs/bellcommand'},
             { label: '柠枺镜像', to: '/docs/lemwood-mirror' },
             { label: '控件转换器', to: '/docs/fcl-to-zl2' },
+            { label: 'TpaGui', to: '/docs/tpagui' },
           ],
         },
         {

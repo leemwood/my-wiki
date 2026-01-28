@@ -31,6 +31,10 @@
     "message": "Control Converter",
     "description": "The label of footer link with label=控件转换器 linking to /docs/fcl-to-zl2"
   },
+  "link.item.label.TpaGui": {
+    "message": "TpaGui",
+    "description": "The label of footer link with label=TpaGui linking to /docs/tpagui"
+  },
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/ning-g-mo/wiki"

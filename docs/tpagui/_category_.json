@@ -1,0 +1,8 @@
+{
+  "label": "TpaGui",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "TpaGui 插件的详细使用文档，包含安装、配置及命令说明。"
+  }
+}

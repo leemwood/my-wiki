@@ -1,0 +1,8 @@
+{
+  "label": "TpaGui",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Detailed documentation for the TpaGui plugin, including installation, configuration, and command descriptions."
+  }
+}
