@@ -26,7 +26,10 @@ Manually converting these complex JSON configurations is time-consuming and pron
 - ⌨️ **Smart Key Mapping**: Handles 50+ common keys (letters, numbers, function keys, mouse buttons).
 - 📍 **Precise Coordinate Scaling**: Automatically scales coordinates from 1:1000 to 1:10000, with **v1.0.4 Enhanced Safety Checks** to prevent crashes from negative coordinates.
 - 🎨 **Safe Colors & Styles**: Uses verified safe color values and automatically clamps style parameters (font size, border width, etc.) to official limits.
-- 🛡️ **Enhanced Robustness (v1.0.5)**: Deeply optimized reverse conversion logic with automatic null-safety for missing fields, ensuring safe conversion of incomplete configurations.
+- 🛡️ **Smart Robustness (v1.0.5)**: 
+  - **Auto-Format Inference**: Automatically identifies pasted JSON formats and suggests switching modes if incorrect.
+  - **Third-party Format Recognition**: Recognizes common non-standard formats like PojavLauncher/Board and provides friendly feedback.
+  - **Null-Safety**: Deeply optimized reverse conversion logic with automatic null-safety for missing fields, ensuring safe conversion of incomplete configurations.
 - 🕹️ **Interaction Logic Simulation**: Uses **Swipple (Sliding Linkage)** to enhance D-pad smoothness and supports **Deep Touch Detection** for touch event distribution.
 - 🚀 **Modern UI**: Built with Vue 3 + Tailwind CSS, featuring real-time preview and one-click copy/download.
 
