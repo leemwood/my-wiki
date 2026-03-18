@@ -1,6 +1,6 @@
 # Placeholder Support
 
-GeyserMenu supports PlaceholderAPI placeholders, which can be used to dynamically display information in menus.
+GeyserMenu supports PlaceholderAPI variables to dynamically display information in menus.
 
 ## Using Placeholders
 
@@ -22,7 +22,7 @@ menu:
   title: "§6%player_name%'s Menu"
   
   # Using a placeholder in the content
-  content: |- 
+  content: |-
     §fHello, %player_name%
     §7Balance: §e%vault_eco_balance%
   
@@ -36,8 +36,11 @@ menu:
       icon_type: "java"
       command: "balance %player_name%"
 ```
+
 ## Performance Optimization
-To improve performance, you can configure placeholder caching in `config.yml`:
+
+You can configure placeholder caching in `config.yml` to improve performance:
+
 ```yaml
 performance:
   # Enable placeholder caching
@@ -54,20 +57,22 @@ performance:
 ```
 
 :::tip Tip
-- Enabling caching can improve performance but may introduce delays in placeholder updates.
-- Adjust the refresh interval based on your server's needs.
-- For real-time updates, consider disabling caching. 
+- Enabling caching can improve performance, but placeholder updates will be delayed
+- It is recommended to adjust the refresh interval based on your server situation
+- For placeholders that need real-time updates, you can disable caching
 :::
 
 ## Common Placeholders
-Here are some commonly used PlaceholderAPI placeholders:
+
+Here are some commonly used PlaceholderAPI variables:
+
 - `%player_name%` - Player name
 - `%player_displayname%` - Player display name
-- `%server_online%` - Number of online players
+- `%server_online%` - Online player count
 - `%vault_eco_balance%` - Player balance (requires Vault)
 - `%player_health%` - Player health
 - `%player_food_level%` - Player hunger level
 
-:::warning 
-Note Ensure that PlaceholderAPI and the corresponding extensions are installed before using placeholders. 
+:::warning Note
+Please make sure PlaceholderAPI and corresponding expansions are installed before using placeholders.
 :::

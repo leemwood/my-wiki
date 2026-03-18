@@ -1,6 +1,6 @@
 # Icon System
 
-GeyserMenu supports two types of icons: Java Edition item IDs and Bedrock Edition texture paths.
+GeyserMenu supports three types of icons: Java Edition item IDs, Bedrock Edition texture paths, and URL icons.
 
 ## Basic Usage
 
@@ -14,19 +14,39 @@ items:
     icon: "compass"
     icon_type: "java"      # Use Java Edition item ID
 ```
+
 ### 2. Bedrock Edition Texture Path
+
 Directly use Bedrock Edition texture paths:
+
 ```yaml
 items:
   - text: "Shop Menu"
     icon: "textures/items/diamond"
     icon_type: "bedrock"   # Use Bedrock Edition texture path
 ```
+
+### 3. URL Icon
+
+Load icons from network URLs:
+
+```yaml
+items:
+  - text: "Custom Button"
+    icon: "https://example.com/icon.png"
+    icon_type: "url"       # Use URL icon
+```
+
+:::warning Note
+URL icons require `icons.allow_url: true` to be enabled in config.yml, and only HTTPS links are allowed by default.
+:::
+
 ## Using Resource Pack Icons
+
 You can add custom icons through a Bedrock Edition resource pack:
 
 1. Create the resource pack directory structure:
-```plaintext
+```
 my_resource_pack/
 ├── manifest.json
 ├── pack_icon.png
@@ -36,6 +56,7 @@ my_resource_pack/
             ├── my_icon1.png
             └── my_icon2.png
 ```
+
 2. Use custom icons in menus:
 ```yaml
 items:
@@ -43,16 +64,28 @@ items:
     icon: "textures/gui/icons/my_icon1"
     icon_type: "bedrock"
 ```
-3. Apply the resource pack to the Bedrock Edition client:
-- Import the resource pack into the Bedrock Edition client
-- Or distribute the resource pack automatically via the server
 
-## Icon Mapping
+3. Apply the resource pack to the Bedrock Edition client:
+   - Import the resource pack into the Bedrock Edition client
+   - Or distribute the resource pack automatically via the server
+
+## Icon Mapping Configuration
+
 Configure Java Edition to Bedrock Edition texture mapping in `config.yml`:
+
 ```yaml
 icons:
   # Default icon
   default: "textures/items/paper"
+  
+  # Whether to allow URL icons
+  allow_url: true
+  
+  # URL icon settings
+  url:
+    https-only: true
+    max-length: 256
+    allowed-domains: []
   
   # Icon type mappings
   mappings:
@@ -62,31 +95,33 @@ icons:
 ```
 
 ## Best Practices
-1. When using resource packs:
 
-- Recommended image size: 32x32 or 64x64 pixels
-- Use PNG format with transparency support
-- Use lowercase letters and underscores for filenames
-- Use the textures/gui/icons/ prefix for paths
+1. When using resource packs:
+   - Recommended image size is 32x32 or 64x64 pixels
+   - Use PNG format with transparency support
+   - Use lowercase letters and underscores for filenames
+   - Use the `textures/gui/icons/` prefix for paths
 
 2. Choosing icon types:
-- If using Java Edition items, choose icon_type: "java"
-- If using custom icons, choose icon_type: "bedrock"
+   - If using Java Edition items, choose `icon_type: "java"`
+   - If using custom icons, choose `icon_type: "bedrock"`
+   - If using network icons, choose `icon_type: "url"`
 
-3. Resource pack considerations:
-- Ensure the resource pack version is compatible with the client
-- Icon paths must be complete and correct
-- It is recommended to use server-side resource pack distribution
+3. URL icon considerations:
+   - Ensure HTTPS protocol is used
+   - Image size should not be too large
+   - Consider using CDN for faster loading
 
 :::tip Tip
-
 - Custom icons must be loaded through a Bedrock Edition resource pack
 - Resource packs can be loaded on the server or client side
 - Icon paths are case-sensitive
+- You can add custom mappings in config.yml
 :::
 
 :::warning Note
 - If an icon path is invalid, the default icon will be used
-Resource packs must meet Bedrock Edition format requirements
-- It is recommended to test all icons for proper display 
+- Resource packs must meet Bedrock Edition format requirements
+- It is recommended to test all icons for proper display
+- URL icons require network connection to display
 :::
