@@ -20,5 +20,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # IDEs and editors
-.idea
-.vscode
+.idea/
+.vscode/
+.trae/
+
+paper-api-docs/

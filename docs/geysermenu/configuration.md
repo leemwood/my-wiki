@@ -50,9 +50,9 @@ security:
 
 ### 图标设置
 
-GeyserMenu 支持两种类型的图标：
+GeyserMenu 支持三种类型的图标：
 
-### 1. Java 版物品 ID
+#### 1. Java 版物品 ID
 使用 Java 版的物品 ID，会自动转换为对应的基岩版材质路径：
 
 ```yaml
@@ -62,30 +62,52 @@ items:
     icon_type: "java"    # 指定使用Java版图标
 ```
 
-### 2. 基岩版材质路径
+#### 2. 基岩版材质路径
 直接使用基岩版的材质路径：
 
 ```yaml
 items:
   - text: "商店菜单"
     icon: "textures/items/diamond"    # 基岩版材质路径
-    icon_type: "bedrock"             # 指定使用基岭版图标
+    icon_type: "bedrock"             # 指定使用基岩版图标
+```
+
+#### 3. URL 图标
+从网络 URL 加载图标：
+
+```yaml
+items:
+  - text: "自定义按钮"
+    icon: "https://example.com/icon.png"    # 图标URL
+    icon_type: "url"                        # 指定使用URL图标
 ```
 
 :::warning 重要提示
-从版本 1.1.0 开始，必须通过 `icon_type` 属性明确指定图标类型（"java" 或 "bedrock"）。这是为了避免图标显示错误和提高性能。
+从版本 1.2.0 开始，支持三种图标类型，通过 `icon_type` 属性指定：
+- `java` - Java 版物品 ID（自动映射）
+- `bedrock` - 基岩版材质路径
+- `url` - 网络 URL 图标
 :::
 
 ### 图标映射配置
 
-在 config.yml 中配置 Java 版到基岭版的材质映射：
+在 config.yml 中配置 Java 版到基岩版的材质映射：
 
 ```yaml
 icons:
   # 默认图标
   default: "textures/items/paper"
   
-  # 图标类型映射 (Java版 -> 基岭版)
+  # 是否允许URL图标
+  allow_url: true
+  
+  # URL图标设置
+  url:
+    https-only: true
+    max-length: 256
+    allowed-domains: []
+  
+  # 图标类型映射 (Java版 -> 基岩版)
   mappings:
     # 方块
     grass_block: "textures/blocks/grass_side"
@@ -101,14 +123,15 @@ icons:
 ### 使用建议
 
 1. 如果你熟悉 Java 版物品 ID，使用 `icon_type: "java"`
-2. 如果你需要使用特定的基岭版材质，使用 `icon_type: "bedrock"`
-3. 如果没有指定 `icon_type`，默认会尝试作为 Java 版物品 ID 处理
+2. 如果你需要使用特定的基岩版材质，使用 `icon_type: "bedrock"`
+3. 如果你需要使用网络图标，使用 `icon_type: "url"`
+4. 如果没有指定 `icon_type`，默认会尝试作为 Java 版物品 ID 处理
 
 :::tip 提示
 - Java 版物品 ID 不需要包含 `minecraft:` 前缀
-- 基岭版材质路径必须是完整的材质路径
+- 基岩版材质路径必须是完整的材质路径
 - 可以在配置文件中添加新的材质映射
-- 图标类型必须通过 icon_type 指定 ("java" 或 "bedrock")
+- 图标类型必须通过 icon_type 指定 ("java"、"bedrock" 或 "url")
 :::
 
 :::warning 注意
@@ -139,43 +162,127 @@ error:
 
 ```yaml
 menu:
+  # 表单类型：simple、modal、custom
+  type: simple
+  
   # 菜单标题
   title: "主菜单"
   
-  # 副标题（可选）
+  # 副标题（可选，仅 SimpleForm）
   subtitle: "选择一个选项"
   
   # 主要内容（可选）
   content: "这是菜单内容"
   
-  # 页脚（可选）
+  # 页脚（可选，仅 SimpleForm）
   footer: "在线人数: %server_online%"
   
-  # 按钮列表
+  # 按钮列表（SimpleForm）
   items:
     - text: "传送菜单"
       description: "打开传送菜单"
       icon: "compass"
-      icon_type: "java"      # 必须指定图标类型
+      icon_type: "java"
+      submenu: "teleport.yml"
+```
+
+### SimpleForm 配置
+
+SimpleForm 是默认的表单类型，适用于多按钮列表：
+
+```yaml
+menu:
+  type: simple  # 可省略
+  title: "主菜单"
+  subtitle: "选择一个选项"
+  content: "这是菜单内容"
+  footer: "在线人数: %server_online%"
+  
+  items:
+    - text: "传送菜单"
+      description: "打开传送菜单"
+      icon: "compass"
+      icon_type: "java"
       submenu: "teleport.yml"
     
     - text: "商店菜单"
       description: "打开商店菜单"
       icon: "textures/items/diamond"
-      icon_type: "bedrock"   # 必须指定图标类型
+      icon_type: "bedrock"
       submenu: "shop.yml"
     
     - text: "返回出生点"
       description: "点击传送到出生点"
       icon: "nether_star"
-      icon_type: "java"    # 添加图标类型
+      icon_type: "java"
       command: "spawn"
+```
+
+### ModalForm 配置
+
+ModalForm 是确认对话框，适用于需要用户确认的操作：
+
+```yaml
+menu:
+  type: modal
+  title: "确认购买"
+  content: "确定要花费 100 金币购买钻石吗？"
+  button1: "确认购买"
+  button2: "取消"
+  
+  on_button1:
+    command: "eco take {player} 100"
+    execute_as: console
+  
+  on_button2:
+    submenu: "shop.yml"
+```
+
+### CustomForm 配置
+
+CustomForm 支持多种输入组件：
+
+```yaml
+menu:
+  type: custom
+  title: "玩家设置"
+  
+  components:
+    - type: label
+      text: "=== 玩家设置面板 ==="
+    
+    - type: dropdown
+      text: "选择语言"
+      options:
+        - "简体中文"
+        - "English"
+      default: 0
+    
+    - type: toggle
+      text: "接收私聊消息"
+      default: true
+    
+    - type: slider
+      text: "渲染距离"
+      min: 2
+      max: 32
+      step: 2
+      default: 12
+    
+    - type: input
+      text: "自定义昵称"
+      placeholder: "输入你的昵称"
+      default: "{player}"
+  
+  on_submit:
+    command: "say {0} 选择了 {1}"
+    execute_as: console
 ```
 
 :::tip 提示
 - 所有文本支持颜色代码 (使用 & 符号)
 - 支持 PlaceholderAPI 变量
-- 图标类型必须通过 icon_type 指定 ("java" 或 "bedrock")
+- 详细表单类型说明请参阅 [表单类型](./form-types.md) 文档
 :::
 
 ### 菜单类型
