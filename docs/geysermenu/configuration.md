@@ -4,6 +4,34 @@
 
 `config.yml` 包含插件的核心设置：
 
+### 基础设置
+
+```yaml
+settings:
+  # 语言设置 - 支持的语言: zh_cn (中文), en (英文)
+  language: "zh_cn"
+  
+  # 默认菜单文件名 - 当玩家直接使用/gmenu时打开的菜单
+  default-menu: "menu.yml"
+  
+  # 调试模式 - 启用后会输出更多日志信息
+  debug: false
+  
+  # 命令安全检查 - 防止执行危险命令
+  enable-command-security: true
+  
+  # 是否检查更新
+  check-updates: true
+```
+
+:::tip 语言设置
+从 v1.3.0-beta2 开始，插件支持多语言配置：
+- `zh_cn` - 中文（默认）
+- `en` - 英文
+
+设置语言后，插件的所有日志消息将使用对应语言显示。
+:::
+
 ### 性能设置
 
 ```yaml
