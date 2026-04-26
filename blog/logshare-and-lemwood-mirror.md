@@ -2,7 +2,7 @@
 slug: logshare-and-lemwood-mirror
 title: 两个站的故事：从 Logshare 到柠枺镜像
 authors:
-  - leemwood
+  - lemwood
 tags: [日志分析, 镜像站, 个人项目]
 ---
 
