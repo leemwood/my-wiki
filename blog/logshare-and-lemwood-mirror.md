@@ -34,8 +34,17 @@ tags: [日志分析, 镜像站, 个人项目]
 
 ## 关于 Logshare
 
-至于 Logshare，它是重构了 mclo.gs 站的源代码。吐槽 mclo.gs 的代码也不是一次两次了，那代码确实够雷霆的。给 FCL 和 ZL2 内置上传链接也是我做的。只不过老外依旧会使用 mclo.gs，我也没办法强迫他们改。
+至于 Logshare，它是重构了 mclo.gs 站的源代码，前后端均由我的好朋友**琪初**负责。吐槽 mclo.gs 的代码也不是一次两次了，那代码确实够雷霆的。给 FCL 和 ZL2 内置上传链接也是我做的。只不过老外依旧会使用 mclo.gs，我也没办法强迫他们改。
 
 ---
 
-这就是两个站的大概故事。如果你觉得这些服务有用，欢迎 [资助我](https://afdian.net/@leemwood)，让我能继续维护下去。
+如果你觉得这些服务有用，欢迎 [资助我](https://afdian.net/@leemwood)，让我能继续维护下去。
+
+## 感谢赞助
+
+感谢所有对 Lemwood 旗下镜像、工具站、LogShare 项目的捐助！
+
+- **Swung 0x48**（MobileGlues 开发者）：**1000 元人民币**赞助支持！
+- **ConfectionaryQwQ**（Bilibili UP 主）：对本项目的大力宣传支持
+
+感谢您的关注与支持！
