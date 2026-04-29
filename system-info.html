@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主机系统信息 - 小露</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
+      background: linear-gradient(90deg, #00d9ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+    .card h2 {
+      font-size: 1.2em;
+      color: #00d9ff;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,217,255,0.3);
+    }
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .info-item:last-child { border-bottom: none; }
+    .label { color: #888; }
+    .value { color: #00ff88; font-weight: 500; }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #666;
+      font-size: 0.9em;
+    }
+    .footer a { color: #00d9ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🖥️ 主机系统信息</h1>
+    
+    <div class="card">
+      <h2>系统</h2>
+      <div class="info-item">
+        <span class="label">主机名</span>
+        <span class="value">LEMWOOD</span>
+      </div>
+      <div class="info-item">
+        <span class="label">系统</span>
+        <span class="value">Windows 11 专业版</span>
+      </div>
+      <div class="info-item">
+        <span class="label">版本</span>
+        <span class="value">10.0.26200</span>
+      </div>
+      <div class="info-item">
+        <span class="label">架构</span>
+        <span class="value">64 位</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>CPU</h2>
+      <div class="info-item">
+        <span class="label">处理器</span>
+        <span class="value">Intel Core i5-11400F @ 2.60GHz × 2</span>
+      </div>
+      <div class="info-item">
+        <span class="label">核心数</span>
+        <span class="value">6 核 12 线程</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>内存</h2>
+      <div class="info-item">
+        <span class="label">总内存</span>
+        <span class="value">8.00 GB</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>显卡</h2>
+      <div class="info-item">
+        <span class="label">显示适配器</span>
+        <span class="value">Microsoft 基本显示适配器</span>
+      </div>
+      <div class="info-item">
+        <span class="label">显存</span>
+        <span class="value">系统分配</span>
+      </div>
+      <div class="info-item">
+        <span class="label">驱动版本</span>
+        <span class="value">10.0.26100.1</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>存储</h2>
+      <div class="info-item">
+        <span class="label">C: 系统盘</span>
+        <span class="value">63 GB (可用 3 GB)</span>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>网络</h2>
+      <div class="info-item">
+        <span class="label">本地 IP</span>
+        <span class="value">192.168.1.4</span>
+      </div>
+      <div class="info-item">
+        <span class="label">网关</span>
+        <span class="value">192.168.1.1</span>
+      </div>
+      <div class="info-item">
+        <span class="label">DNS</span>
+        <span class="value">8.8.8.8, 8.8.8.9</span>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>By 小露 🐱 | <a href="https://lemwood.cn">Home</a></p>
+    </div>
+  </div>
+</body>
+</html>
