@@ -6,7 +6,7 @@ authors:
 tags: [日志分析, 镜像站, 个人项目]
 ---
 
-今天想聊聊 Logshare.cn 和 mirror.lemwood.icu 这两个站的故事。
+今天想聊聊 Logshare.cn 和 miawa.cn 这两个站的故事。
 
 <!-- truncate -->
 

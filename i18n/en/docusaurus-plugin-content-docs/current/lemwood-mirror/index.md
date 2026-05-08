@@ -18,7 +18,7 @@ Lemwood Mirror (柠枺镜像) is an automated launcher mirroring system designed
 
 ## 🌐 Online Access
 
-- **Official Mirror**: [https://mirror.lemwood.icu/](https://mirror.lemwood.icu/)
+- **Official Mirror**: [https://miawa.cn/](https://miawa.cn/)
 
 ## 📖 Quick Navigation
 
