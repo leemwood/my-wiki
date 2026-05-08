@@ -18,7 +18,7 @@ title: 项目总览
 
 ## 🌐 在线地址
 
-- **官方镜像站**: [https://mirror.miawa.cn/](https://mirror.miawa.cn/)
+- **官方镜像站**: [https://miawa.cn/](https://miawa.cn/)
 
 ## 📖 快速导航
 
