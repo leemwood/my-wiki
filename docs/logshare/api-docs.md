@@ -31,7 +31,7 @@ Logshare 提供 RESTful API 接口，方便第三方应用集成日志上传功�
 
 #### 请求示例
 
-```bash
+```bash title="上传日志"
 curl -X POST https://logshare.cn/api/upload \
   -H "Content-Type: application/json" \
   -d '{
@@ -42,7 +42,7 @@ curl -X POST https://logshare.cn/api/upload \
 
 #### 成功响应
 
-```json
+```json title="响应示例"
 {
   "success": true,
   "url": "https://logshare.cn/abc123",
@@ -54,7 +54,7 @@ curl -X POST https://logshare.cn/api/upload \
 
 #### 失败响应
 
-```json
+```json title="错误响应"
 {
   "success": false,
   "error": "内容不能为空",
@@ -107,7 +107,7 @@ curl https://logshare.cn/api/log/abc123
 
 #### 成功响应
 
-```json
+```json title="响应示例"
 {
   "success": true,
   "id": "abc123",
@@ -125,7 +125,7 @@ curl https://logshare.cn/api/log/abc123
 
 #### 成功响应
 
-```json
+```json title="健康检查响应"
 {
   "status": "healthy",
   "timestamp": "2024-01-15T10:30:00Z"

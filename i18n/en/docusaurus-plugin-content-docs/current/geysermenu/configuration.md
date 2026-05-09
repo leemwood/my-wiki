@@ -4,34 +4,6 @@
 
 The `config.yml` file contains the core settings for the plugin:
 
-### Basic Settings
-
-```yaml
-settings:
-  # Language setting - Supported languages: zh_cn (Chinese), en (English)
-  language: "en"
-  
-  # Default menu file name - Menu opened when player uses /gmenu directly
-  default-menu: "menu.yml"
-  
-  # Debug mode - Outputs more log information when enabled
-  debug: false
-  
-  # Command security check - Prevents execution of dangerous commands
-  enable-command-security: true
-  
-  # Check for updates
-  check-updates: true
-```
-
-:::tip Language Setting
-Starting from v1.3.0-beta2, the plugin supports multi-language configuration:
-- `zh_cn` - Chinese
-- `en` - English (default)
-
-After setting the language, all plugin log messages will be displayed in the corresponding language.
-:::
-
 ### Performance Settings
 
 ```yaml

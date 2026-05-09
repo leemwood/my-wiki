@@ -31,7 +31,7 @@ Upload Minecraft log file and return share link.
 
 #### Request Example
 
-```bash
+```bash title="Upload Log"
 curl -X POST https://logshare.cn/api/upload \
   -H "Content-Type: application/json" \
   -d '{
@@ -42,7 +42,7 @@ curl -X POST https://logshare.cn/api/upload \
 
 #### Success Response
 
-```json
+```json title="Success Response"
 {
   "success": true,
   "url": "https://logshare.cn/abc123",
@@ -54,7 +54,7 @@ curl -X POST https://logshare.cn/api/upload \
 
 #### Error Response
 
-```json
+```json title="Error Response"
 {
   "success": false,
   "error": "Content cannot be empty",
@@ -107,7 +107,7 @@ Get access statistics for a log.
 
 #### Success Response
 
-```json
+```json title="Success Response"
 {
   "success": true,
   "id": "abc123",
@@ -125,7 +125,7 @@ Check service health status.
 
 #### Success Response
 
-```json
+```json title="Health Check Response"
 {
   "status": "healthy",
   "timestamp": "2024-01-15T10:30:00Z"
