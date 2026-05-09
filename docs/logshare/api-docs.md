@@ -34,10 +34,13 @@ Logshare 提供 RESTful API 接口，方便第三方应用集成日志上传功�
 ```bash title="上传日志"
 curl -X POST https://logshare.cn/api/upload \
   -H "Content-Type: application/json" \
-  -d '{
-    "content": "[19:30:45] [Server thread/INFO]: Starting minecraft server version 1.20.1",
-    "name": "server.log"
-  }'
+  --data-binary @server.log
+```
+
+```bash title="使用 JSON 数据"
+curl -X POST https://logshare.cn/api/upload \
+  -H "Content-Type: application/json" \
+  -d '{"content": "日志内容", "name": "server.log"}'
 ```
 
 #### 成功响应

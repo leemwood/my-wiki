@@ -31,13 +31,16 @@ Upload Minecraft log file and return share link.
 
 #### Request Example
 
-```bash title="Upload Log"
+```bash title="Upload Log File"
 curl -X POST https://logshare.cn/api/upload \
   -H "Content-Type: application/json" \
-  -d '{
-    "content": "[19:30:45] [Server thread/INFO]: Starting minecraft server version 1.20.1",
-    "name": "server.log"
-  }'
+  --data-binary @server.log
+```
+
+```bash title="Using JSON Data"
+curl -X POST https://logshare.cn/api/upload \
+  -H "Content-Type: application/json" \
+  -d '{"content": "Log content", "name": "server.log"}'
 ```
 
 #### Success Response
