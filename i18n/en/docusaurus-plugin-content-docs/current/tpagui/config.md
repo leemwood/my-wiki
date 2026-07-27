@@ -4,52 +4,55 @@ sidebar_position: 2
 
 # Configuration
 
-The TpaGui configuration file `config.yml` allows you to customize almost all interface text and functional settings.
+TpaGui's main configuration file is `plugins/TpaGui/config.yml`. Interface text lives in the `lang/` language files (zh_CN / zh_TW / en_US) in the plugin data folder, all supporting `&` color codes.
 
-## Message Configuration (messages)
+## Language (language)
 
-The messages section supports the use of `&` color codes.
+- `language`: Interface and log language. Options: `zh_CN`, `zh_TW`, `en_US`.
 
-### Basic Messages
-- `prefix`: Prefix for plugin messages.
-- `player-offline`: Prompt when a player attempts an operation on a player who is already offline.
-- `no-players-online`: Prompt when opening the menu when there are no other online players on the server.
+## Velocity Cross-server Sync (velocity)
 
-### GUI Menu (gui)
-Chest menu configuration for Java Edition players:
-- `title`: Menu title, supports the `{page}` placeholder.
-- `skull`:
-  - `name`: Display name for player heads, supports `{player}`.
-  - `lore`: Operation guide below the skull.
-- `navigation`: Text for Previous Page/Next Page buttons.
+- `enabled`: Enable Velocity cross-server mode. When enabled, the plugin fetches the network-wide player list from the proxy and supports cross-server teleport requests; otherwise it runs in local mode even behind a proxy.
+- `server-name`: This server's name in Velocity (must match velocity.toml), used to identify local players.
+- `show-cross-server-players`: Whether to show players from other servers in the GUI.
+- `sync-interval`: Player list sync interval (seconds). `0` means sync on demand when the GUI opens.
 
-### Form Interface (form)
-Form configuration for Bedrock Edition players:
-- `title`: Main menu title.
-- `player-select`: Label for the player selection dropdown.
-- `tpahere-toggle`: Switch between "Teleport to him" or "Let him teleport to me".
-- `request`:
-  - `title`: Title for the teleport request pop-up.
-  - `content-to`: Content when applying to teleport to the other party.
-  - `content-here`: Content when applying for the other party to teleport to oneself.
-  - `accept/deny`: Button text.
-
-## Command Settings (commands)
-
-This is the core of TpaGui's flexibility, allowing you to adjust commands based on the base plugins your server uses (such as EssentialsX, CMI, etc.).
-
-### TPA Core Commands
-- `to-player`: Set the command to apply to teleport to the other party (default is `tpa`).
-- `here`: Set the command to apply for the other party to teleport to oneself (default is `tpahere`).
-
-### Listening Settings
-- `listen-commands`: The plugin will listen for these commands to pop up a confirmation window for Bedrock players.
-
-### Response Commands
-- `accept`: List of commands to accept teleport requests.
-- `deny`: List of commands to deny teleport requests.
+:::tip
+The same jar also works as a Velocity plugin: drop it into the proxy's `plugins/` folder to aggregate players and forward requests across servers.
+:::
 
 ## Update Check (update-check)
 
 - `enabled`: Whether to enable automatic update checking.
-- `interval`: Check interval (minutes). Set to `0` to check only once when the server starts.
+- `interval`: Check interval (minutes). `0` means check only once at startup.
+
+## Interface Settings (java-dialog-gui)
+
+This section applies to the Java chest GUI, Bedrock forms, and the cross-server player list:
+
+- `enabled`: Enable native Dialog request prompts for 1.21.6+ clients. Note that Dialogs require an external datapack providing `tpagui:request_to` / `tpagui:request_here`; without it, the plugin falls back to chat messages automatically.
+- `players-per-page`: Number of players per page (the Java chest GUI is capped at 45).
+- `show-avatars`: Whether Bedrock forms show player avatars (requires network access to the avatar API).
+- `avatar-api`: Avatar API URL, supports `{uuid}` and `{name}` placeholders.
+
+## Back Button (back-button)
+
+- `enabled`: Whether to show a back button in the player selection menu.
+- `material`: Button material for the Java GUI (Bukkit Material name, e.g. `BARRIER`, `ARROW`).
+- `java-command`: Command executed when clicked on Java Edition (e.g. `cd`).
+- `bedrock-command`: Command executed when clicked on Bedrock Edition (e.g. `gmenu`).
+
+## Command Settings (commands)
+
+This is the core of TpaGui's flexibility — adjust it to match your TPA plugin (EssentialsX, HuskHomes, CMI, etc.).
+
+### TPA Core Commands (tpa)
+- `to-player`: Command to request teleporting to another player (default `tpa`).
+- `here`: Command to request another player teleport to you (default `tpahere`).
+
+### Listening Settings
+- `listen-commands`: The plugin listens for these commands to push a request confirmation UI to the target player (Bedrock form / Dialog / chat message).
+
+### Response Commands
+- `accept`: List of commands to accept teleport requests (default `tpaccept`).
+- `deny`: List of commands to deny teleport requests (default `tpdeny`).

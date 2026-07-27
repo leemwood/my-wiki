@@ -4,17 +4,18 @@ sidebar_position: 1
 
 # Introduction
 
-TpaGui is a graphical user interface plugin for TPA requests designed for Minecraft servers. It aims to simplify teleportation requests between players by replacing traditional, cumbersome commands with an intuitive GUI.
+TpaGui is a graphical user interface plugin for TPA requests designed for Minecraft servers. It does not implement teleportation itself — instead, it acts as a GUI layer on top of your existing TPA plugin (EssentialsX, HuskHomes, etc.), replacing cumbersome commands with an intuitive interface.
 
 ## Core Features
 
-- **Multi-platform Support**: Perfectly adapted for Paper, Folia, and Velocity environments.
+- **Multi-platform Support**: Works on Paper 1.21+ (and forks), with optional Velocity proxy integration for cross-server player lists.
 - **Cross-platform Optimization**:
-  - **Java Edition**: Provides a Chest GUI based interface displaying online player heads.
-  - **Bedrock Edition (Geyser)**: Automatically detects and provides a native Bedrock Form interface, supporting teleport request pop-up notifications.
-- **Highly Customizable**: Supports full customization of all interface text, command aliases, and color codes.
-- **Smart Update Detection**: Built-in semantic version checking logic to alert you of plugin updates in a timely manner.
-- **Internationalization Support**: Supports multi-language log output and configuration.
+  - **Java Edition**: Chest GUI displaying online player heads; on 1.21.6+, incoming requests can show a native Dialog.
+  - **Bedrock Edition (Geyser)**: Automatically detected and served a native Form interface, with accept/deny pop-ups for teleport requests.
+- **Back Button**: Available on both editions, with configurable material and command (e.g. `/cd` for Java, `/gmenu` for Bedrock to return to a main menu).
+- **Privacy Friendly**: Vanished players are automatically hidden (SuperVanish compatible).
+- **Highly Customizable**: All interface text supports multiple languages (Simplified Chinese / Traditional Chinese / English) and color codes; all TPA-related commands are configurable.
+- **Smart Update Detection**: Startup and periodic checks notify admins of new versions.
 
 ## Downloads and Links
 
@@ -29,4 +30,4 @@ Traditional TPA plugins usually require players to memorize complex commands (su
 3. **Left-click**: Request to teleport to that player.
 4. **Right-click**: Request that player to teleport to you.
 
-For Bedrock players, the plugin automatically pushes a dialog box with "Accept/Deny" buttons, greatly enhancing the gaming experience for cross-platform players.
+Bedrock players automatically receive a form with "Accept/Deny" buttons; Java players on 1.21.6+ can receive a native Dialog request prompt (falling back to a chat message if the datapack is not installed), greatly enhancing the cross-platform experience.
