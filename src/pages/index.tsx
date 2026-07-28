@@ -42,7 +42,7 @@ export default function Home(): ReactNode {
       })}
       description={translate({
         id: 'homepage.metaDescription',
-        message: '专业的ai开发者('
+        message: '柠枺的Wiki文档'
       })}>
       <HomepageHeader />
       <main>
