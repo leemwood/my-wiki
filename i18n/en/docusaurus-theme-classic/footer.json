@@ -37,7 +37,7 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/ning-g-mo/wiki"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/leemwood/my-wiki"
   },
   "link.item.label.QQ群": {
     "message": "QQ Group",

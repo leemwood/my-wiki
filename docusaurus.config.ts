@@ -101,7 +101,7 @@ const config: Config = {
         },
         {to: '/blog', label: '博客', position: 'left'}, // 博客链接
         {
-          href: 'https://github.com/ning-g-mo/wiki',
+          href: 'https://github.com/leemwood/my-wiki',
           label: 'GitHub',
           position: 'right', // 右侧显示
         },
